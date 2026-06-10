@@ -1,1 +1,29 @@
-/* Caso queira utilizar framework como Bootstrap para estilização, pode utilizar. Basta ignoar esse arquivo */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}

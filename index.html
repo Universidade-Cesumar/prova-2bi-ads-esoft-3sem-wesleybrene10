@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Almoxarifado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Controle de Almoxarifado</h1>
+
+    <div>
+        <input type="text" id="input-nome" placeholder="Nome do material">
+
+        <input type="number" id="input-quantidade" placeholder="Quantidade">
+
+        <button id="btn-cadastrar">
+            Cadastrar
+        </button>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Material</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+
+        <tbody id="lista-materiais">
+
+        </tbody>
+    </table>
+
+    <script src="main.js"></script>
+</body>
+</html>
