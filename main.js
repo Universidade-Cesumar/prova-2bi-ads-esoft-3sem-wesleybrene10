@@ -53,3 +53,8 @@ btnCadastrar.addEventListener("click", async () => {
 });
 
 listarMateriais();
+
+if (!inputNome.value || !inputQuantidade.value) {
+    alert("Preencha todos os campos");
+    return;
+}
