@@ -8,31 +8,58 @@
 </head>
 <body>
 
-    <h1>Controle de Almoxarifado</h1>
+    <main class="container">
 
-    <div>
-        <input type="text" id="input-nome" placeholder="Nome do material">
+        <h1>Controle de Almoxarifado</h1>
+        <p class="subtitulo">
+            Cadastro e gerenciamento de materiais de enfermagem.
+        </p>
 
-        <input type="number" id="input-quantidade" placeholder="Quantidade">
+        <section class="formulario">
 
-        <button id="btn-cadastrar">
-            Cadastrar
-        </button>
-    </div>
+            <label for="input-nome">Nome do Material</label>
+            <input
+                type="text"
+                id="input-nome"
+                placeholder="Ex: Luvas descartáveis"
+            >
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Material</th>
-                <th>Quantidade</th>
-            </tr>
-        </thead>
+            <label for="input-quantidade">Quantidade</label>
+            <input
+                type="number"
+                id="input-quantidade"
+                placeholder="Ex: 100"
+            >
 
-        <tbody id="lista-materiais">
+            <button id="btn-cadastrar">
+                Cadastrar Material
+            </button>
 
-        </tbody>
-    </table>
+        </section>
+
+        <section class="listagem">
+
+            <h2>Materiais Cadastrados</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+
+                <tbody id="lista-materiais">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
 
     <script src="main.js"></script>
+
 </body>
 </html>
