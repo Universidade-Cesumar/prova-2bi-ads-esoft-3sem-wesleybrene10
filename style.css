@@ -27,3 +27,8 @@ th, td {
     padding: 10px;
     text-align: left;
 }
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+}
