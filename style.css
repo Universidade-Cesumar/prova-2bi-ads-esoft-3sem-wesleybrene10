@@ -104,3 +104,25 @@ th, td{
 th{
     background-color: #f0f0f0;
 }
+
+.input-retirada{
+    width: 80px;
+    padding: 6px;
+    text-align: center;
+}
+
+.btn-baixar,
+.btn-excluir{
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    margin: 2px;
+    color: white;
+}
+
+.btn-baixar{
+    background-color: #2e7d32;
+}
+
+.btn-excluir{
+    background-color: #c62828;
+}
