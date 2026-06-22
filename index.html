@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Almoxarifado</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
 </head>
 <body>
@@ -17,8 +15,25 @@
             Cadastro e gerenciamento de materiais de enfermagem.
         </p>
 
-        <section class="formulario">
+        <!-- Dashboard -->
+        <section class="dashboard">
+            <div class="card-dashboard">
+                <span class="card-label">Total de itens cadastrados</span>
+                <span class="card-valor" id="total-itens">0</span>
+            </div>
+            <div class="card-dashboard card-alerta">
+                <span class="card-label">⚠️ Estoque crítico (menos de 10)</span>
+                <span class="card-valor" id="total-criticos">0</span>
+            </div>
+        </section>
 
+        <!-- Mensagem de erro de rede -->
+        <div id="alerta-erro" class="alerta-erro" hidden>
+            ⚠️ Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.
+        </div>
+
+        <!-- Formulário de cadastro -->
+        <section class="formulario">
             <label for="input-nome">Nome do Material</label>
             <input
                 type="text"
@@ -31,17 +46,28 @@
                 type="number"
                 id="input-quantidade"
                 placeholder="Ex: 100"
+                min="0"
             >
 
             <button id="btn-cadastrar">
                 Cadastrar Material
             </button>
-
         </section>
 
+        <!-- Listagem -->
         <section class="listagem">
+            <div class="listagem-cabecalho">
+                <h2>Materiais Cadastrados</h2>
+                <input
+                    type="text"
+                    id="input-busca"
+                    placeholder="🔍 Pesquisar material..."
+                >
+            </div>
 
-            <h2>Materiais Cadastrados</h2>
+            <div id="msg-vazia" class="msg-vazia" hidden>
+                Nenhum material encontrado para a pesquisa realizada.
+            </div>
 
             <table>
                 <thead>
@@ -52,18 +78,12 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-
-                <tbody id="lista-materiais">
-
-                </tbody>
-
+                <tbody id="lista-materiais"></tbody>
             </table>
-
         </section>
 
     </main>
 
     <script src="main.js"></script>
-
 </body>
 </html>
