@@ -1,128 +1,247 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-input {
-    padding: 8px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 8px 15px;
-    cursor: pointer;
-}
-
-table {
-    margin-top: 20px;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-body {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-*{
+/* ─── Reset e base ─── */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f6f9;
 }
 
-.container{
-    max-width: 900px;
+/* ─── Container principal ─── */
+.container {
+    max-width: 960px;
     margin: 40px auto;
     background-color: white;
-    padding: 25px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-h1{
+h1 {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
+    color: #1a1a2e;
 }
 
-.subtitulo{
+.subtitulo {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     color: #666;
+    font-size: 0.95rem;
 }
 
-.formulario{
+/* ─── Dashboard ─── */
+.dashboard {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.card-dashboard {
+    flex: 1;
+    background-color: #e8f5e9;
+    border-left: 5px solid #2e7d32;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card-dashboard.card-alerta {
+    background-color: #fff3e0;
+    border-left-color: #e65100;
+}
+
+.card-label {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.card-valor {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a1a2e;
+}
+
+/* ─── Banner de erro de rede ─── */
+.alerta-erro {
+    background-color: #ffebee;
+    border: 1px solid #ef9a9a;
+    border-radius: 8px;
+    color: #b71c1c;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* ─── Formulário de cadastro ─── */
+.formulario {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 30px;
 }
 
-input{
-    padding: 10px;
+.formulario label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
 }
 
-button{
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #2e7d32;
+}
+
+#btn-cadastrar {
     padding: 12px;
+    background-color: #1565c0;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-button:hover{
-    opacity: 0.9;
+#btn-cadastrar:hover {
+    background-color: #0d47a1;
 }
 
-.listagem{
-    margin-top: 30px;
+/* ─── Cabeçalho da listagem com busca ─── */
+.listagem-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
 }
 
-table{
+.listagem-cabecalho h2 {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    white-space: nowrap;
+}
+
+#input-busca {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+/* ─── Mensagem lista vazia ─── */
+.msg-vazia {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+    font-size: 0.95rem;
+}
+
+/* ─── Tabela ─── */
+table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th, td{
+th, td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
+    font-size: 0.95rem;
 }
 
-th{
+th {
     background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
 }
 
-.input-retirada{
-    width: 80px;
-    padding: 6px;
+/* ─── Linha com estoque crítico ─── */
+tr.estoque-critico {
+    background-color: #fff8e1;
+}
+
+tr.estoque-critico td:nth-child(2) {
+    color: #e65100;
+    font-weight: bold;
+}
+
+tr.estoque-critico td:nth-child(2)::after {
+    content: " ⚠️";
+}
+
+/* ─── Input de retirada dentro da tabela ─── */
+.input-retirada {
+    width: 75px;
+    padding: 6px 8px;
     text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
+/* ─── Botões de ação ─── */
 .btn-baixar,
-.btn-excluir{
-    padding: 8px 12px;
-    font-size: 0.85rem;
+.btn-excluir {
+    padding: 7px 12px;
+    font-size: 0.82rem;
     margin: 2px;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.15s;
 }
 
-.btn-baixar{
+.btn-baixar {
     background-color: #2e7d32;
 }
 
-.btn-excluir{
+.btn-excluir {
     background-color: #c62828;
+}
+
+.btn-baixar:hover,
+.btn-excluir:hover {
+    opacity: 0.85;
+}
+
+/* ─── Responsividade básica ─── */
+@media (max-width: 600px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .listagem-cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #input-busca {
+        width: 100%;
+    }
+
+    .btn-baixar,
+    .btn-excluir {
+        display: block;
+        width: 100%;
+        margin: 3px 0;
+    }
 }
